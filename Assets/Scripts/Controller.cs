@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
     /* TODO:
-        - Add audio stimuli
         - Upload on Github and tell EEG-VR-Group
         - Clean and comment code. Generate build and try it on windows
         - Try Unity4LSL on it
@@ -12,6 +12,8 @@ public class Controller : MonoBehaviour
     public Color colorTwo = Color.white;
 
     private Camera _cam; // where we actually change the colors
+
+    public AudioSource audioSource;
 
     // FPS related vars:
     // not enough with just enum declaration to be in the inspector, it needs an instantiation
@@ -27,15 +29,36 @@ public class Controller : MonoBehaviour
     public bool vSyncEnabled;
     public int targetFrameRate = 60;
 
+    public enum Key
+    {
+        C,
+        Db,
+        D,
+        Eb,
+        E,
+        F,
+        Gb,
+        G,
+        Ab,
+        A,
+        Bb,
+        B
+    }
+
+    public Key key = Key.A;
+    public int[] octaves = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+    public int octave = 4;
+    public int repeatToneAfter = 500; // tone repetition delay in ms
+
     private float _fps;
     private float _referenceTime;
     private float _durationReference;
 
-    // delays in ms
-    public float refreshTime = 1000;
-    public float durationOne = 200;
-    public float durationTwo = 50;
-
+    // time in ms
+    public int refreshTime = 1000;
+    public int durationOne = 200;
+    public int durationTwo = 50;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +72,7 @@ public class Controller : MonoBehaviour
         _cam.clearFlags = CameraClearFlags.SolidColor;
         _referenceTime = Time.realtimeSinceStartup * 1000;
         _durationReference = Time.realtimeSinceStartup * 1000;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -68,6 +92,12 @@ public class Controller : MonoBehaviour
         else if (showTime > durationOne && showTime < showSum)
         {
             _cam.backgroundColor = colorTwo;
+        }
+
+        if (elapsedTime >= repeatToneAfter)
+        {
+            var tone = Resources.Load<AudioClip>("Media/Audio/" + key + octave);
+            audioSource.PlayOneShot(tone);
         }
 
         if (elapsedTime >= refreshTime)
