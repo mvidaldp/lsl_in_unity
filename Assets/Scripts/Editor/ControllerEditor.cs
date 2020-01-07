@@ -7,6 +7,7 @@ using UnityEngine;
 namespace Editor
 {
     [CustomEditor(typeof(Controller))]
+    [CanEditMultipleObjects]
     public class ControllerEditor : UnityEditor.Editor
     {
         public Dictionary<string, decimal> frequencies = new Dictionary<string, decimal>();

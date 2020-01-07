@@ -3,9 +3,9 @@
 public class Controller : MonoBehaviour
 {
     /* TODO:
-        - Upload on Github and tell EEG-VR-Group
-        - Clean and comment code. Generate build and try it on windows
-        - Try Unity4LSL on it
+        - Send data through LSL protocol
+        - Receive data from ANT system
+        - Run test
      */
     // colors to show
     public Color colorOne = Color.black;
@@ -78,7 +78,7 @@ public class Controller : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate() // check the difference with FixedUpdate(), meant for higher sampling frequency
     {
         ++_fps;
         var timeSinceStart = Time.realtimeSinceStartup * 1000;

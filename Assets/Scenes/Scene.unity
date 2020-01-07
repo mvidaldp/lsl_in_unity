@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -163,10 +164,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorOne: {r: 0, g: 0, b: 0, a: 1}
   colorTwo: {r: 1, g: 1, b: 1, a: 1}
-  audioSource: {fileID: 0}
   vSync: 1
   vSyncEnabled: 0
   targetFrameRate: 60
+  key: 9
+  octave: 4
+  repeatToneAfter: 500
   refreshTime: 1000
   durationOne: 950
   durationTwo: 50
@@ -323,3 +326,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930e33cce6986e1cfbebcfa746b7ed0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outletStreams:
+  - sName: Default
+    sType: 6
+  inletStreams:
+  - sName: Default
+    sType: 6
