@@ -1,0 +1,3 @@
+[submodule "Assets/LSL4Unity"]
+	path = Assets/LSL4Unity
+	url = https://github.com/mvidaldp/LSL4Unity.git
