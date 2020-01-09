@@ -133,8 +133,8 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420033}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -159,20 +159,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd96e39b62e51e9dbb289a802ef16e91, type: 3}
+  m_Script: {fileID: 11500000, guid: a6750b8e8ebe69a488bf2f49d6d71fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorOne: {r: 0, g: 0, b: 0, a: 1}
-  colorTwo: {r: 1, g: 1, b: 1, a: 1}
-  vSync: 1
-  vSyncEnabled: 0
-  targetFrameRate: 60
-  key: 9
-  octave: 4
-  repeatToneAfter: 500
-  refreshTime: 1000
-  durationOne: 950
-  durationTwo: 50
+  outletStreams:
+  - sName: Default
+    sType: 6
+  inletStreams:
+  - sName: Default
+    sType: 6
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -335,12 +330,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 930e33cce6986e1cfbebcfa746b7ed0d, type: 3}
+  m_Script: {fileID: 11500000, guid: f055ece2c93094446886ebbf7f68fdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outletStreams:
-  - sName: Default
-    sType: 6
-  inletStreams:
-  - sName: Default
-    sType: 6
+  colorOne: {r: 0, g: 0, b: 0, a: 1}
+  colorTwo: {r: 1, g: 1, b: 1, a: 1}
+  vSync: 1
+  vSyncEnabled: 0
+  targetFrameRate: 60
+  key: 9
+  octave: 4
+  repeatToneAfter: 500
+  refreshTime: 1000
+  durationOne: 200
+  durationTwo: 50
