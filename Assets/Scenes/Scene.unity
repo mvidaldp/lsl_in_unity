@@ -159,15 +159,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6750b8e8ebe69a488bf2f49d6d71fe9, type: 3}
+  m_Script: {fileID: 11500000, guid: 42203ce844ecbc826b071c7af60abd97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   outletStreams:
-  - sName: Default
-    sType: 6
-  inletStreams:
-  - sName: Default
-    sType: 6
+  - name: default
+    type: 6
+    sources: 00000000
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -330,7 +328,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f055ece2c93094446886ebbf7f68fdf9, type: 3}
+  m_Script: {fileID: 11500000, guid: ff2d9a63bcb20f72596933311280586f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   colorOne: {r: 0, g: 0, b: 0, a: 1}
@@ -342,5 +340,5 @@ MonoBehaviour:
   octave: 4
   repeatToneAfter: 500
   refreshTime: 1000
-  durationOne: 200
+  durationOne: 950
   durationTwo: 50

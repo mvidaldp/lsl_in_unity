@@ -2,11 +2,6 @@
 
 public class Controller : MonoBehaviour
 {
-    /* TODO:
-        - Send data through LSL protocol
-        - Receive data from ANT system
-        - Run test
-     */
     // colors to show
     public Color colorOne = Color.black;
     public Color colorTwo = Color.white;
@@ -57,7 +52,7 @@ public class Controller : MonoBehaviour
 
     // time in ms
     public int refreshTime = 1000;
-    public int durationOne = 200;
+    public int durationOne = 950;
     public int durationTwo = 50;
 
 
@@ -78,7 +73,7 @@ public class Controller : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate() // check the difference with FixedUpdate(), meant for higher sampling frequency
+    void FixedUpdate() // check the difference with FixedUpdate(), meant for higher sampling frequency
     {
         ++_fps;
         var timeSinceStart = Time.realtimeSinceStartup * 1000;
