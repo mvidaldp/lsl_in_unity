@@ -1,10 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class Controller : MonoBehaviour
 {
     // colors to show
-    public Color colorOne = Color.black;
-    public Color colorTwo = Color.white;
+    public Color32 colorOne = Color.black;
+    public Color32 colorTwo = Color.white;
+    public bool isPlaying = false;
+    public bool colorChanged = false;
 
     private Camera _cam; // where we actually change the colors
 
@@ -20,7 +25,7 @@ public class Controller : MonoBehaviour
 
     public VSync vSync = VSync.Max; // enum instantiation
     public bool vSyncEnabled;
-    public int targetFrameRate = 60;
+    public int targetFrameRate = 90;
 
     // audio related vars
     private AudioSource _audioSource; // to play an audio clip
@@ -80,7 +85,7 @@ public class Controller : MonoBehaviour
         var elapsedTime = timeSinceStart - _referenceTime;
         var showTime = timeSinceStart - _durationReference;
         var lastPlay = timeSinceStart - _audioReference;
-
+        
         if (showTime >= durationOne + durationTwo)
         {
             _cam.backgroundColor = colorOne;
@@ -97,11 +102,16 @@ public class Controller : MonoBehaviour
             var tone = Resources.Load<AudioClip>("Media/Audio/" + key + octave);
             _audioSource.PlayOneShot(tone);
         }
+        
+        isPlaying = _audioSource.isPlaying;
+        colorChanged = _cam.backgroundColor == colorTwo;
 
         if (!(elapsedTime >= refreshTime)) return; // what follows is like putting it into an else block
         Debug.Log("FPS: " + (1000 * _fps) / elapsedTime);
+        
         _fps = 0;
         _referenceTime = timeSinceStart;
+        
         // update FPS settings
         if (!vSyncEnabled)
             QualitySettings.vSyncCount = 0;

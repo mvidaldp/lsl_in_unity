@@ -163,9 +163,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outletStreams:
-  - name: default
+  - name: Dummy
     type: 6
-    sources: 00000000
+    source: 3
+    timestamp: 0
+  - name: Audio
+    type: 6
+    source: 0
+    timestamp: 1
+  - name: Color
+    type: 6
+    source: 1
+    timestamp: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -201,7 +210,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 0
+  m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
@@ -331,11 +340,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2d9a63bcb20f72596933311280586f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorOne: {r: 0, g: 0, b: 0, a: 1}
-  colorTwo: {r: 1, g: 1, b: 1, a: 1}
+  colorOne:
+    serializedVersion: 2
+    rgba: 4278190080
+  colorTwo:
+    serializedVersion: 2
+    rgba: 4294967295
+  isPlaying: 0
+  colorChanged: 0
   vSync: 1
   vSyncEnabled: 0
-  targetFrameRate: 60
+  targetFrameRate: 90
   key: 9
   octave: 4
   repeatToneAfter: 500
