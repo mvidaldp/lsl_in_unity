@@ -159,7 +159,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42203ce844ecbc826b071c7af60abd97, type: 3}
+  m_Script: {fileID: 11500000, guid: ae719c230d8966547ab8f4f06a4193d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   outletStreams:
@@ -167,13 +167,13 @@ MonoBehaviour:
     type: 6
     source: 3
     timestamp: 0
+  - name: Diode
+    type: 6
+    source: 1
+    timestamp: 1
   - name: Audio
     type: 6
     source: 0
-    timestamp: 1
-  - name: Color
-    type: 6
-    source: 1
     timestamp: 1
 --- !u!20 &519420031
 Camera:
@@ -197,7 +197,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 6.22
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -242,7 +242,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a5dc3e7bcec0ca46ea0a3b54f9585b63, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5aff1a6d1fe229c40a5edf8235b5aca2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff2d9a63bcb20f72596933311280586f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b7548537f8f46346a76bd26011d4f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   colorOne:
@@ -355,5 +355,5 @@ MonoBehaviour:
   octave: 4
   repeatToneAfter: 500
   refreshTime: 1000
-  durationOne: 950
-  durationTwo: 50
+  durationOne: 500
+  durationTwo: 500

@@ -86,22 +86,26 @@ public class Controller : MonoBehaviour
         var showTime = timeSinceStart - _durationReference;
         var lastPlay = timeSinceStart - _audioReference;
         
-        if (showTime >= durationOne + durationTwo)
-        {
-            _cam.backgroundColor = colorOne;
-            _durationReference = timeSinceStart;
-        }
-        else if (showTime > durationOne && showTime < durationOne + durationTwo)
-        {
-            _cam.backgroundColor = colorTwo;
-        }
+//        if (showTime >= durationOne + durationTwo)
+//        {
+//            _cam.backgroundColor = colorOne;
+//            _durationReference = timeSinceStart;
+//        }
+//        else if (showTime > durationOne && showTime < durationOne + durationTwo)
+//        {
+//            _cam.backgroundColor = colorTwo;
+//        }
 
         if (lastPlay >= repeatToneAfter)
         {
             _audioReference = timeSinceStart;
-            var tone = Resources.Load<AudioClip>("Media/Audio/" + key + octave);
-            _audioSource.PlayOneShot(tone);
+            //var tone = Resources.Load<AudioClip>("Media/Audio/" + key + octave);
+            //_audioSource.PlayOneShot(tone);
+            _audioSource.Play();
+            _cam.backgroundColor = colorTwo;
         }
+        else
+            _cam.backgroundColor = colorOne;
         
         isPlaying = _audioSource.isPlaying;
         colorChanged = _cam.backgroundColor == colorTwo;
