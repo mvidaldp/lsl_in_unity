@@ -134,9 +134,8 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420029}
   - component: {fileID: 519420034}
-  - component: {fileID: 519420030}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Game
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,31 +149,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae719c230d8966547ab8f4f06a4193d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outletStreams:
-  - name: Dummy
-    type: 6
-    source: 3
-    timestamp: 0
-  - name: Diode
-    type: 6
-    source: 1
-    timestamp: 1
-  - name: Audio
-    type: 6
-    source: 0
-    timestamp: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -184,8 +158,8 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -197,13 +171,13 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 6.22
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
-  orthographic size: 4.507345
-  m_Depth: -1
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -212,7 +186,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 0
+  m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 0
@@ -242,15 +216,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5aff1a6d1fe229c40a5edf8235b5aca2, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 313b26ed612fe9a96b6b6ddc6a69e33f, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -337,23 +311,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b7548537f8f46346a76bd26011d4f37, type: 3}
+  m_Script: {fileID: 11500000, guid: ff2d9a63bcb20f72596933311280586f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorOne:
-    serializedVersion: 2
-    rgba: 4278190080
-  colorTwo:
-    serializedVersion: 2
-    rgba: 4294967295
-  isPlaying: 0
-  colorChanged: 0
-  vSync: 1
-  vSyncEnabled: 0
-  targetFrameRate: 90
-  key: 9
-  octave: 4
-  repeatToneAfter: 500
-  refreshTime: 1000
-  durationOne: 500
-  durationTwo: 500
