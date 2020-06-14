@@ -1278,7 +1278,7 @@ public class liblsl
             const string libname = "liblsl32";
 #elif UNITY_STANDALONE_WIN
             // a build hook will took care that the correct dll will be renamed after a successfull build 
-            const string libname = "liblsl";
+            const string libname = "liblsl64";
 #elif UNITY_ANDROID
             const string libname = "lslAndroid";
 #else
